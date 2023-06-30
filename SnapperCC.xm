@@ -48,13 +48,13 @@ extern "C" CFNotificationCenterRef CFNotificationCenterGetDistributedCenter();
 	_selected = NO;
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		int mode = 1;
-		id prefValue = [[[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.p2kdev.snapper2cc"] objectForKey:@"Snapper2Mode"];
+		id prefValue = [[[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.p2kdev.snapper2cc"] objectForKey:@"Snapper3Mode"];
 		if (prefValue)
 			mode = [prefValue intValue];
 		if (mode == 1)
-			CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("com.jontelang.snapper2.force.open"), NULL, NULL, YES);
+			CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("com.jontelang.snapper3.force.open"), NULL, NULL, YES);
 		else if (mode == 2)
-			CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("com.jontelang.snapper2.forceinstant.open"), NULL, NULL, YES);
+			CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("com.jontelang.snapper3.forceinstant.open"), NULL, NULL, YES);
 	});
 }
 
